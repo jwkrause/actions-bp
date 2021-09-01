@@ -30,4 +30,4 @@ jobs:
         ValidName = "${{ github.event.inputs.name }}"
       run: |
         echo "Triggered by a ${{ github.event_name }} event on ${{ github.ref }}"
-        echo "Hello $ValidName"
+        echo "Hello ${{env.ValidName}}"
