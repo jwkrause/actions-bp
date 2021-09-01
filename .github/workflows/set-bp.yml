@@ -4,4 +4,4 @@ jobs:
   Protection:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Push on ${{ github.ref }}"
+      - run: echo "Triggered by a ${{ github.event_name }} event on ${{ github.ref }}"
