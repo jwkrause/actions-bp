@@ -1,0 +1,7 @@
+name: Set Protction Test
+on: [push]
+jobs:
+  Protection:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Push on ${{ github.ref }}"
