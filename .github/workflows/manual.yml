@@ -12,7 +12,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Person to greet'
         # Default value if no value is explicitly provided
-        default: 'World'
+        #default: 'World'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -26,7 +26,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - name: SetVars
+        ValidName = ${{ github.event.inputs.name }}
     - name: Send greeting
       run: |
         echo "Triggered by a ${{ github.event_name }} event on ${{ github.ref }}"
-        echo "Hello ${{ github.event.inputs.name }}"
+        echo "Hello $ValidName"
